@@ -1,0 +1,53 @@
+<div class="col-md-4 mx-auto">
+    <div class="card">
+        <div class="card-header">
+            <h3>Editar Cotizacion</h3>
+        </div>
+        <div class="card-body">
+            <form action="/notes/edit-note/{{note,_id}}?_method=PUT" method="POST">
+                <input type="hidden" name="_method" value="PUT" >
+                <div class="form-group">
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" placeholder="Nombre" value="{{note.name}}" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="description" class="form-control" placeholder="Descripcion">{{note.description}}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Electrodomestido</label>
+                        <select class="form-control" name="electrodomestico">
+                            <option>{{note.electrodomestico}}</option>
+                            <option>Lavadora</option>
+                            <option>Secadora</option>
+                            <option>Refrigerador</option>
+                            <option>Centrifugadora</option>
+                            <option>Calefont</option>
+                            <option>Bano</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Comuna</label>
+                        <select class="form-control" name="comuna">
+                            <option>{{note.comuna}}</option>
+                            <option>Lo Prado</option>
+                            <option>Pudahuel</option>
+                            <option>Penalolen</option>
+                            <option>Providencia</option>
+                            <option>Maipu</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name="number" class="form-control" placeholder="Numero Telefonico"
+                            step="any" value="{{note.number}}">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="direction" class="form-control" placeholder="Direccion">{{note.dorection}}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-info btn-block" type="submit">Guardar Cambios</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="row">
+    {{#each notes}}
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title d-flex justify-content-between align-items-center">
+                    {{name}} <a href="/notes/edit/{{_id}}"><i class="fas fa-edit"></i></a>
+                </h4>
+                <p>{{description}}</p>
+                <p>{{electrodomestico}}</p>
+                <p>{{comuna}}</p>
+                <p>{{number}}</p>
+                <p>{{direction}}</p>
+                <form action="/notes/delete/{{_id}}?_method=DELETE" method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button class="btn btn-danger btn-block btn-sm" type="submit">Eliminar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {{else}}
+    <div class="card mx-auto">
+        <div class="card-body">
+            <p class="lead"> No existen Cotizaciones</p>
+            <a href="/notes/add" class="btn btn-info btn-block">Cotiza aqui!</a>
+        </div>
+    </div>
+    {{/each}}
+</div>
